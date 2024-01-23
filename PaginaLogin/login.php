@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if(isset($_SESSION['DadosAluno'])) {
+    if($_SESSION['DadosAluno'] == 'vazio') {
+        unset($_SESSION['DadosAluno']);
+        echo"<script>alert('Conta nao existe!')</script>";
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,16 +38,16 @@
             <p>Seja bem vindo.</p>
             <p>Faça o login para ter acesso à sua conta.</p>
         </div>
-        <form action="" id="LoginForm">
+        <form action="../php/Login.php" id="LoginForm" method="POST">
             <div>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com"
                     required
                     >
                     <label for="floatingInput">Informe seu e-mail</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="senha" placeholder="name@example.com"
+                    <input type="password" class="form-control" name="senha" id="senha" placeholder="name@example.com"
                     minlength="8"
                     required
                     >

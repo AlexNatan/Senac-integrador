@@ -1,3 +1,16 @@
+<?php
+
+include_once("../php/conexao.php");
+
+session_start();
+if(isset($_SESSION['DadosAluno'])) {
+    if($_SESSION['DadosAluno'] != 'vazio') {
+        $linha = $_SESSION['DadosAluno'];
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -96,15 +109,6 @@
                             </a>
                         </div>
                     </li>
-
-                    <li>
-                        <div class="box">
-                            <a href="../PaginaLogin/login.php">
-                                <i class="fa fa-university" aria-hidden="true"></i>
-                                Entrar
-                            </a>
-                        </div>
-                    </li>
                 </ul>
             </nav>
         </div>
@@ -114,11 +118,15 @@
             <header>
                 <h1>Página Inicial</h1>
                 <div class="dropdown">
-                    <a href="../PaginaLogin/login.html">
-                        <button class="btn btn-secondary" style="background-color: #659ae4; border: none; font-family: opens-sans, sans-serif;" type="button">
-                            Faça o Login
-                        </button>
-                    </a>
+                    <button class="btn btn-secondary" style="background-color: #659ae4; border: none; font-family: opens-sans, sans-serif;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?php echo"$linha[nome]"?>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Alterar senha</a></li>
+                        <li><a class="dropdown-item" href="#">Documentos</a></li>
+                        <li><a class="dropdown-item" href="#">Dados Cadastrais</a></li>
+                        <li><a class="dropdown-item" href="../php/sairDaConta.php">Sair</a></li>
+                    </ul>
                 </div>
             </header>
             <hr>
