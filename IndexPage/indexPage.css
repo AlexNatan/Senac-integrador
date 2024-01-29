@@ -36,6 +36,15 @@ body > header {
     font-weight: normal;
 }
 
+header a {
+    text-decoration: none;
+    color: #03588C;
+}
+
+img {
+    width: 110px;
+}
+
 .box {
     padding: .9em 3.5em;
 
@@ -71,10 +80,6 @@ body > header {
 
 }
 
-ul {
-    padding-left: 0px !important;
-}
-
 ul>li {
     list-style: none;
     padding: 0px;
@@ -83,7 +88,6 @@ ul>li {
 header a {
     text-decoration: none;
     color: #03588C;
-    
 }
 
 img {
@@ -100,25 +104,6 @@ img {
     color: #fff;
 }
 
-
-main {
+iframe {
     width: 100%;
-}
-
-main > div {
-    margin: 2em 4em;
-}
-
-section {
-    margin: 2em 4em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-section > header {
-    display: flex;
-    font-size: 20px;
-    justify-content: space-between;
-    align-items: center;
 }

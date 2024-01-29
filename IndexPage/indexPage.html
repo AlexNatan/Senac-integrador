@@ -1,19 +1,11 @@
-<?php
-
-include_once('../php/conexao.php');
-$sql = "SELECT * FROM cursos";
-$result = mysqli_query($conn, $sql);
-$linha = mysqli_fetch_array($result);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="meusCursos.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="indexPage.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -25,91 +17,79 @@ $linha = mysqli_fetch_array($result);
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <title>Meus Cursos</title>
-</head>
 
+</head>
 <body>
     <header>
         <div class="containercss">
             <div>
                 <img src="../image/1024px-Senac_logo.svg.png" alt="">
                 <h2>Portal - Aluno</h2>
-
             </div>
             <nav>
                 <ul>
-                    <li>
-                        <div class="box ">
-                            <a href="#">
-                                <i class="fa fa-home" aria-hidden="true"></i>Página Inicial
+                    <li class="selecionado abaLateral">
+                        <div class="box">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaInicial/index.html', 0)">
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                Página Inicial
                             </a>
                         </div>
                     </li>
-
-                    <li class="selecionado">
+                    <li class="abaLateral">
                         <div class="box">
-                            <a href="#">
+                            <a href="" onclick="mudarPagina('./Pages/PaginaMeusCursos/meusCursos.php', 1)">
                                 <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-
                                 Meus Cursos
                             </a>
                         </div>
 
                     </li>
-
-                    <li>
+                    <li class="abaLateral">
                         <div class="box">
-                            <a href="#">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaQuadroDeHorarios/quadroDeHorarios.php', 2)">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                                 Quadro de Horários
                             </a>
                         </div>
                     </li>
-
-                    <li>
+                    <li class="abaLateral">
                         <div class="box">
 
-                            <a href="#">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaMeusCursos/meusCursos.php', 3)">
                                 <i class="fa fa-usd" aria-hidden="true"></i>
                                 Financeiro
                             </a>
                         </div>
                     </li>
-
-                    <li>
+                    <li class="abaLateral">
                         <div class="box">
 
-                            <a href="#">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaMeusCursos/meusCursos.php', 4)">
                                 <i class="fa fa-book" aria-hidden="true"></i>
-
                                 Materiais de Aula
                             </a>
                         </div>
                     </li>
-
-                    <li>
+                    <li class="abaLateral">
                         <div class="box">
-
-                            <a href="#">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaMeusCursos/meusCursos.php', 5)">
                                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-
                                 Pedências
                             </a>
                         </div>
                     </li>
-
-                    <li>
+                    <li class="abaLateral">
                         <div class="box">
-                            <a href="#">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaMeusCursos/meusCursos.php', 6)">
                                 <i class="fa fa-university" aria-hidden="true"></i>
                                 Biblioteca Digital
                             </a>
                         </div>
                     </li>
-
-                    <li>
+                    <li class="abaLateral">
                         <div class="box">
-                            <a href="../PaginaLogin/login.php">
+                            <a href="" onclick="mudarPagina('../PaginaMeusCursos/meusCursos.php', 7)">
                                 <i class="fa fa-university" aria-hidden="true"></i>
                                 Entrar
                             </a>
@@ -119,51 +99,8 @@ $linha = mysqli_fetch_array($result);
             </nav>
         </div>
     </header>
-    <main>
-        <section>
-            <header>
-                <h1>Página Inicial</h1>
-                <div class="dropdown">
-                    <a href="../PaginaLogin/login.php">
-                        <button class="btn btn-secondary"
-                            style="background-color: #659ae4; border: none; font-family: opens-sans, sans-serif;"
-                            type="button">
-                            Faça o Login
-                        </button>
-                    </a>
-                </div>
-            </header>
-            <hr>
-            <div>
-                <select class="form-select form-select-lg mb-3" onchange="selecionarCurso()" aria-label="Large select example" id="selectCurso">
-                    <option selected value="0">Open this select menu</option>
-                    <?php
-                    
-                    for($i = 0; $i <= 5; $i++) {
-                        echo "<option value='$linha[id]'>$linha[nome]</option>";
-                    }
-                    
-                    ?>
-                </select>
-            </div>
-            <div class="hide" id="tableCurso">
-                <table class="table" >
-                    <thead>
-                        <tr>
-                            <th scope="col">Turma</th>
-                            <th scope="col">Curso</th>
-                            <th scope="col">U.C.</th>
-                            <th scope="col">Período</th>
-                            <th scope="col">Presença</th>
-                            <th scope="col">Situação</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </section>
-    </main>
+    <iframe src="../PaginaInicial/index.html" frameborder="0" id="indexPagina"></iframe>
 
-    <script src="meusCursos.js"></script>
+    <script src="indexPage.js"></script>p
 </body>
-
 </html>

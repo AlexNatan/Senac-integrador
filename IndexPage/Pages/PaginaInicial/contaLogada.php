@@ -53,7 +53,6 @@ if(isset($_SESSION['DadosAluno'])) {
                         <div class="box">
                             <a href="#">
                                 <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-
                                 Meus Cursos
                             </a>
                         </div>
