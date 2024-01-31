@@ -45,23 +45,27 @@ $linha = mysqli_fetch_array($result);
             </header>
             <hr>
             <div>
-                <select class="form-select form-select-lg mb-3" onchange="selecionarCurso()" aria-label="Large select example" id="selectCurso">
-                    <option selected value="0">Open this select menu</option>
-                    <?php
-                    
-                    $sql = "SELECT * FROM cursos";
-                    $result = mysqli_query($conn, $sql);
-                    $linha = mysqli_fetch_array($result);
+                <form action="../../../php/selecionarCurso.php" method="POST" id="cursoForm">
 
-                    for($i = 0; $i <= 2; $i++) {
-                        echo "<option value='$linha[id]'>$linha[nome]</option>";
-                    }
-                
-                    ?>
-                </select>
+                    <select class="form-select form-select-lg mb-3" onchange="selecionarCurso()"
+                        aria-label="Large select example" name="selectCurso" id="selectCurso">
+                        <option selected value="0">Escolha o curso</option>
+
+                        <?php
+                        $sql = "SELECT * FROM cursos";
+                        $result = mysqli_query($conn, $sql);
+
+                        while ($linha = mysqli_fetch_array($result)) {
+                            echo "<option value='$linha[id]'>$linha[nome]</option>";
+                        }
+                        ?>
+
+                    </select>
+
+                </form>
             </div>
-            <div class="hide" id="tableCurso">
-                <table class="table" >
+            <div class="" id="tableCurso">
+                <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">Turma</th>
@@ -72,6 +76,29 @@ $linha = mysqli_fetch_array($result);
                             <th scope="col">Situação</th>
                         </tr>
                     </thead>
+                    <?php
+
+                    session_start();
+                    $idCurso = isset($_SESSION['cursoSelecionado']) ? $_SESSION['cursoSelecionado']:'';
+                    
+                    include_once('../../../php/conexao.php');
+                    $sql = "SELECT * FROM cursos WHERE id = $idCurso";
+                    $result = mysqli_query($conn, $sql);
+                    $linha = mysqli_fetch_array($result);
+                    
+                    echo"
+                    
+                    <tr>
+                        <th class'col'>$linha[1]</th>
+                        <th class'col'>$linha[2]</th>
+                        <th class'col'>$linha[3]</th>
+                        <th class'col'>$linha[1]</th>
+                        <th class'col'>$linha[8]</th>
+                        <th class'col'>$linha[9]</th>
+                    </tr>
+                    
+                    "
+                    ?>
                 </table>
             </div>
         </section>
