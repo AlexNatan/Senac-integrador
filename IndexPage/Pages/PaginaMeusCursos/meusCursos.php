@@ -1,6 +1,6 @@
 <?php
 
-include_once('../php/conexao.php');
+include_once('../../../php/conexao.php');
 $sql = "SELECT * FROM cursos";
 $result = mysqli_query($conn, $sql);
 $linha = mysqli_fetch_array($result);
@@ -32,7 +32,7 @@ $linha = mysqli_fetch_array($result);
     <main>
         <section>
             <header>
-                <h1>Página Inicial</h1>
+                <h1>Meus Cursos</h1>
                 <div class="dropdown">
                     <a href="../PaginaLogin/login.php">
                         <button class="btn btn-secondary"
@@ -49,10 +49,14 @@ $linha = mysqli_fetch_array($result);
                     <option selected value="0">Open this select menu</option>
                     <?php
                     
-                    for($i = 0; $i <= 5; $i++) {
+                    $sql = "SELECT * FROM cursos";
+                    $result = mysqli_query($conn, $sql);
+                    $linha = mysqli_fetch_array($result);
+
+                    for($i = 0; $i <= 2; $i++) {
                         echo "<option value='$linha[id]'>$linha[nome]</option>";
                     }
-                    
+                
                     ?>
                 </select>
             </div>
