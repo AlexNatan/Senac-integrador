@@ -28,17 +28,17 @@ if(isset($_SESSION['DadosAluno'])) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body class="bg-dark">
-    <img src="../image/SenacSlideImg1.png" class="backgroundIMG">
+    <img src="./indexPage/Pages/image/SenacSlideImg1.png" class="backgroundIMG">
     <div class="containerCSS">
         <div>
-            <img src="../image/1024px-Senac_logo.svg.png" alt="">
+            <img src="./indexPage/Pages/image/1024px-Senac_logo.svg.png" alt="">
         </div>
         <div>
             <h1>Área do Aluno</h1>
             <p>Seja bem vindo.</p>
             <p>Faça o login para ter acesso à sua conta.</p>
         </div>
-        <form action="../php/Login.php" id="LoginForm" method="POST">
+        <form action="./php/Login.php" id="LoginForm" method="POST">
             <div>
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com"
