@@ -24,11 +24,6 @@
             <header>
                 <h1>Quadro De Horarios</h1>
                 <div class="dropdown">
-                    <a href="../PaginaLogin/login.php">
-                        <button class="btn btn-secondary" style="background-color: #659ae4; border: none; font-family: opens-sans, sans-serif;" type="button">
-                            Faça o Login
-                        </button>
-                    </a>
                 </div>
             </header>
             <hr>

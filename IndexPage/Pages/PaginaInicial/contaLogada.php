@@ -116,17 +116,6 @@ if(isset($_SESSION['DadosAluno'])) {
         <section>
             <header>
                 <h1>Página Inicial</h1>
-                <div class="dropdown">
-                    <button class="btn btn-secondary" style="background-color: #659ae4; border: none; font-family: opens-sans, sans-serif;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <?php echo"$linha[nome]"?>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Alterar senha</a></li>
-                        <li><a class="dropdown-item" href="#">Documentos</a></li>
-                        <li><a class="dropdown-item" href="#">Dados Cadastrais</a></li>
-                        <li><a class="dropdown-item" href="../php/sairDaConta.php">Sair</a></li>
-                    </ul>
-                </div>
             </header>
             <hr>
            <div class="carouselCSS">
@@ -143,8 +132,6 @@ if(isset($_SESSION['DadosAluno'])) {
 
                         <img class="d-block w-100" src="../image/Icons/javascript.png" alt="First slide">
                     </div>
-                
-
                 </div>
             </div>
             <hr>

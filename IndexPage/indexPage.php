@@ -1,3 +1,16 @@
+<?php
+
+include_once("../php/conexao.php");
+
+session_start();
+if(isset($_SESSION['DadosAluno'])) {
+    if($_SESSION['DadosAluno'] != 'vazio') {
+        $linha = $_SESSION['DadosAluno'];
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +23,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
 </head>
@@ -28,6 +43,8 @@
             </div>
             <nav>
                 <ul style="padding-left: 0;">
+                <li>
+                </li>
                     <li class="selecionado abaLateral">
                         <div class="box">
                             <a href="#" onclick="mudarPagina('./Pages/PaginaInicial/index.html', 0)">
@@ -56,7 +73,7 @@
                     <li class="abaLateral">
                         <div class="box">
 
-                            <a href="#" onclick="mudarPagina('', 3)">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaFinanceiros/Financeiros.html', 3)">
                                 <i class="fa fa-usd" aria-hidden="true"></i>
                                 Financeiro
                             </a>
@@ -65,7 +82,7 @@
                     <li class="abaLateral">
                         <div class="box">
 
-                            <a href="#" onclick="mudarPagina('', 4)">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaMateriaisDeAula/MateriaisDeAula.html', 4)">
                                 <i class="fa fa-book" aria-hidden="true"></i>
                                 Materiais de Aula
                             </a>
@@ -73,7 +90,7 @@
                     </li>
                     <li class="abaLateral">
                         <div class="box">
-                            <a href="#" onclick="mudarPagina('', 5)">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaPedencias/Pedencias.html', 5)">
                                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
                                 Pedências
                             </a>
@@ -81,17 +98,9 @@
                     </li>
                     <li class="abaLateral">
                         <div class="box">
-                            <a href="#" onclick="mudarPagina('', 6)">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaBibliotecaDigital/BibliotecaDigital.html', 6)">
                                 <i class="fa fa-university" aria-hidden="true"></i>
                                 Biblioteca Digital
-                            </a>
-                        </div>
-                    </li>
-                    <li class="abaLateral">
-                        <div class="box">
-                            <a href="" onclick="mudarPagina('', 7)">
-                                <i class="fa fa-university" aria-hidden="true"></i>
-                                Entrar
                             </a>
                         </div>
                     </li>

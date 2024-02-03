@@ -12,7 +12,7 @@
     session_start();
     if($linha) {
         $_SESSION['DadosAluno'] = $linha;
-        header("location: ../IndexPage/Pages/paginaInicial/contaLogada.php");
+        header("location: ../IndexPage/indexPage.php");
     } else if ($linha == "") {
         $_SESSION['DadosAluno'] = 'vazio';
         header("location: ../Index.php");

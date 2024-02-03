@@ -34,13 +34,6 @@ $linha = mysqli_fetch_array($result);
             <header>
                 <h1>Meus Cursos</h1>
                 <div class="dropdown">
-                    <a href="../PaginaLogin/login.php">
-                        <button class="btn btn-secondary"
-                            style="background-color: #659ae4; border: none; font-family: opens-sans, sans-serif;"
-                            type="button">
-                            Faça o Login
-                        </button>
-                    </a>
                 </div>
             </header>
             <hr>
@@ -80,14 +73,12 @@ $linha = mysqli_fetch_array($result);
 
                     session_start();
                     $idCurso = isset($_SESSION['cursoSelecionado']) ? $_SESSION['cursoSelecionado']:'';
-                    
                     include_once('../../../php/conexao.php');
                     $sql = "SELECT * FROM cursos WHERE id = $idCurso";
                     $result = mysqli_query($conn, $sql);
                     $linha = mysqli_fetch_array($result);
                     
                     echo"
-                    
                     <tr>
                         <th class'col'>$linha[1]</th>
                         <th class'col'>$linha[2]</th>
@@ -96,8 +87,8 @@ $linha = mysqli_fetch_array($result);
                         <th class'col'>$linha[8]</th>
                         <th class'col'>$linha[9]</th>
                     </tr>
-                    
-                    "
+                    ";
+
                     ?>
                 </table>
             </div>
