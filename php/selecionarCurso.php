@@ -3,7 +3,9 @@
 
     session_start();
     if(isset($selectCurso)) {
-        $_SESSION['cursoSelecionado'] = $selectCurso;
-        header('location: ../IndexPage/Pages/PaginaMeusCursos/meusCursos.php');
+        if($selectCurso != 0) {
+            $_SESSION['cursoSelecionado'] = $selectCurso;
+            header('location: ../IndexPage/Pages/PaginaMeusCursos/meusCursos.php');
+        }
     }
 ?>

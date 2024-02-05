@@ -57,39 +57,75 @@ $linha = mysqli_fetch_array($result);
 
                 </form>
             </div>
-            <div class="" id="tableCurso">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Turma</th>
-                            <th scope="col">Curso</th>
-                            <th scope="col">U.C.</th>
-                            <th scope="col">Período</th>
-                            <th scope="col">Presença</th>
-                            <th scope="col">Situação</th>
-                        </tr>
-                    </thead>
-                    <?php
+            <div class="cardCurso" id="tableCurso">
+                <?php
+                session_start();
+                $idCurso = isset($_SESSION['cursoSelecionado']) ? $_SESSION['cursoSelecionado'] : '';
+                $sqlCS = "SELECT * FROM cursos WHERE id = $idCurso";
+                $resultCS = mysqli_query($conn, $sqlCS);
+                $linhaCS = mysqli_fetch_array($resultCS);
 
-                    session_start();
-                    $idCurso = isset($_SESSION['cursoSelecionado']) ? $_SESSION['cursoSelecionado']:'';
-                    include_once('../../../php/conexao.php');
-                    $sql = "SELECT * FROM cursos WHERE id = $idCurso";
-                    $result = mysqli_query($conn, $sql);
-                    $linha = mysqli_fetch_array($result);
-                    
-                    echo"
-                    <tr>
-                        <th class'col'>$linha[1]</th>
-                        <th class'col'>$linha[2]</th>
-                        <th class'col'>$linha[3]</th>
-                        <th class'col'>$linha[1]</th>
-                        <th class'col'>$linha[8]</th>
-                        <th class'col'>$linha[9]</th>
-                    </tr>
-                    ";
+                $statusAluno;
 
-                    ?>
+                if ("$linhaCS[situacao]" == "cursando") {
+                    $statusAluno = "cursando";
+                } else {
+                    $statusAluno = "finalizou";
+                }
+                ?>
+
+                <div class='cardCurso'>
+                    <div class='cardCursoTitle'>
+                        <h1>
+                            <?php echo "$linhaCS[nome]" ?>
+                        </h1>
+                        <p class=<?php echo"$statusAluno"?>><?php echo "$linhaCS[situacao]" ?></p>
+                    </div>
+                    <hr>
+                    <div class='cardCursoDescription'>
+                        <div class='cardCursoCH'>
+                            <h3>Carga Horária</h3>
+                            <p>
+                                <?php echo "$linhaCS[cargahoraria]" ?> HORAS
+                            </p>
+                        </div>
+                        <div class='cardCursoHorarios'>
+                            <h3>Horarios</h3>
+                            <div class='cardCursoHorariosES'>
+                                <div>
+                                    <h4>Entada</h4>
+                                    <div>
+                                        <h5>Dia:</h5>
+                                        <p>
+                                            <?php echo "$linhaCS[dentrada]" ?>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h5>Hora:</h5>
+                                        <p>
+                                            <?php echo "$linhaCS[hentrada]" ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4>Saída</h4>
+                                    <div>
+                                        <h5>Dia:</h5>
+                                        <p>
+                                            <?php echo "$linhaCS[dsaida]" ?>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h5>Hora:</h5>
+                                        <p>
+                                            <?php echo "$linhaCS[hsaida]" ?>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </table>
             </div>
         </section>
