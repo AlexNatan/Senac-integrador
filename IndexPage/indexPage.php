@@ -110,6 +110,6 @@ if(isset($_SESSION['DadosAluno'])) {
     </header>
     <iframe src="./Pages/PaginaInicial/index.html" frameborder="0" id="indexPagina"></iframe>
 
-    <script src="indexPage.js"></script>p
+    <script src="indexPage.js"></script>
 </body>
 </html>
