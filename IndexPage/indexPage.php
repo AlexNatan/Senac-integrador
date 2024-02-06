@@ -3,8 +3,8 @@
 include_once("../php/conexao.php");
 
 session_start();
-if(isset($_SESSION['DadosAluno'])) {
-    if($_SESSION['DadosAluno'] != 'vazio') {
+if (isset($_SESSION['DadosAluno'])) {
+    if ($_SESSION['DadosAluno'] != 'vazio') {
         $linha = $_SESSION['DadosAluno'];
     }
 }
@@ -13,6 +13,7 @@ if(isset($_SESSION['DadosAluno'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,17 +24,24 @@ if(isset($_SESSION['DadosAluno'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
 </head>
+
 <body>
     <header>
         <div class="containercss">
@@ -41,10 +49,8 @@ if(isset($_SESSION['DadosAluno'])) {
                 <img src="./Pages/image/1024px-Senac_logo.svg.png" alt="">
                 <h2>Portal - Aluno</h2>
             </div>
-            <nav>
+            <nav style="height: 100%; display:flex; flex-direction:column;justify-content: space-between;">
                 <ul style="padding-left: 0;">
-                <li>
-                </li>
                     <li class="selecionado abaLateral">
                         <div class="box">
                             <a href="#" onclick="mudarPagina('./Pages/PaginaInicial/index.html', 0)">
@@ -98,13 +104,30 @@ if(isset($_SESSION['DadosAluno'])) {
                     </li>
                     <li class="abaLateral">
                         <div class="box">
-                            <a href="#" onclick="mudarPagina('./Pages/PaginaBibliotecaDigital/BibliotecaDigital.html', 6)">
+                            <a href="#"
+                                onclick="mudarPagina('./Pages/PaginaBibliotecaDigital/BibliotecaDigital.html', 6)">
                                 <i class="fa fa-university" aria-hidden="true"></i>
                                 Biblioteca Digital
                             </a>
                         </div>
                     </li>
                 </ul>
+                <div class="btn-group dropup contaINF">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <?php echo"$linha[nome]"?>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
@@ -112,4 +135,5 @@ if(isset($_SESSION['DadosAluno'])) {
 
     <script src="indexPage.js"></script>
 </body>
+
 </html>

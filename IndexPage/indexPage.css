@@ -40,9 +40,11 @@ body > header {
     font-weight: normal;
 }
 
+
 header a {
     text-decoration: none;
     color: #03588C;
+    background-color: transparent;
 }
 
 img {
@@ -106,6 +108,32 @@ img {
 
 .selecionado > div a {
     color: #fff;
+}
+
+.contaINF {
+    height: 3em;
+}
+
+.contaINF button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contaINF i{
+    margin: 0;
+    border-radius: 100%;
+    font-size: 30px;
+    height: 2em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.dropdown-menu {
+    width: 100%;
 }
 
 iframe {
