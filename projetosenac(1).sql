@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Jan-2024 às 14:46
+-- Tempo de geração: 08-Fev-2024 às 13:49
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 7.4.27
 
@@ -128,6 +128,13 @@ CREATE TABLE `quadrodehorarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Extraindo dados da tabela `quadrodehorarios`
+--
+
+INSERT INTO `quadrodehorarios` (`id`, `hentrada`, `UC`, `sala`, `docente`, `local`, `hsaida`) VALUES
+(1, '10:21:00.061000', 'UC06', '002', 'Euclides', 'Laboratorio de informatica', '12:21:11.404000');
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -181,7 +188,7 @@ ALTER TABLE `financeiro`
 -- AUTO_INCREMENT de tabela `quadrodehorarios`
 --
 ALTER TABLE `quadrodehorarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
