@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ol, ul {
+    padding-left: 0 !important;
+}
+
+body {
+    display: flex;
+}
+
+body > header {
+    height: 100vh;
+}
+.containercss {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0em;
+    background-color: #fff;
+    border-right: 1px solid orange;
+    height: 100%;
+}
+
+.containercss > div {
+    height: 9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containercss h2 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+
+header a {
+    text-decoration: none;
+    color: #03588C;
+    background-color: transparent;
+}
+
+img {
+    width: 110px;
+}
+
+.box {
+    padding: .9em 3.5em;
+
+}
+
+.box a {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+
+.fa {
+    display: flex;
+    padding: 5px;
+    text-align: center;
+    align-items: center;
+    margin-right: 20px;
+    color: #03588C;
+}
+
+.box i, section i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    border-radius: 50%;
+    padding: .9em;
+    width: 25px;
+    height: 25px;
+    font-size: 17px;
+
+}
+
+ul>li {
+    list-style: none;
+    padding: 0px;
+}
+
+header a {
+    text-decoration: none;
+    color: #03588C;
+}
+
+img {
+    width: 110px;
+}
+
+.selecionado {
+    background-color: #659ae4;
+    width: 100%;
+    border-right: 5px solid rgb(64, 105, 253);
+}
+
+.selecionado > div a {
+    color: #fff;
+}
+
+.contaINF {
+    
+}
+
+.contaINF button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4em;
+    border-radius: 0px;
+    background-color: transparent;
+    border: 0px;
+    color: black;
+}
+
+.contaINF i{
+    margin: 0;
+    border-radius: 100%;
+    font-size: 30px;
+    height: 2em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.dropdown-menu {
+    width: 100%;
+}
+
+.dropdown-menu li {
+    height: 3em;
+
+}
+
+.dropdown-menu li a {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #659ae4;
+}
+
+iframe {
+    width: 100%;
+}
+
