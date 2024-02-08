@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Fev-2024 às 15:04
+-- Tempo de geração: 08-Fev-2024 às 13:49
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 7.4.27
 
@@ -111,13 +111,6 @@ CREATE TABLE `financeiro` (
   `acoes` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `financeiro`
---
-
-INSERT INTO `financeiro` (`id`, `situacao`, `financiador`, `vencimento`, `fpagamento`, `parcela`, `valor`, `acoes`) VALUES
-(1, 'pago', 'senac', '2024-02-19', 'cartão', 2, '160,50', '');
-
 -- --------------------------------------------------------
 
 --
@@ -189,7 +182,7 @@ ALTER TABLE `dadosaluno`
 -- AUTO_INCREMENT de tabela `financeiro`
 --
 ALTER TABLE `financeiro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `quadrodehorarios`

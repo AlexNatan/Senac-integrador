@@ -111,13 +111,18 @@ img {
 }
 
 .contaINF {
-    height: 3em;
+    
 }
 
 .contaINF button {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 4em;
+    border-radius: 0px;
+    background-color: transparent;
+    border: 0px;
+    color: black;
 }
 
 .contaINF i{
@@ -134,6 +139,26 @@ img {
 
 .dropdown-menu {
     width: 100%;
+}
+
+.dropdown-menu li {
+    height: 3em;
+
+}
+
+.dropdown-menu li a {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #659ae4;
+}
+
+.hr{
+    height: 1px;
 }
 
 iframe {

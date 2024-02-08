@@ -79,7 +79,7 @@ if (isset($_SESSION['DadosAluno'])) {
                     <li class="abaLateral">
                         <div class="box">
 
-                            <a href="#" onclick="mudarPagina('./Pages/PaginaFinanceiros/Financeiros.html', 3)">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaFinanceiros/Financeiros.php', 3)">
                                 <i class="fa fa-usd" aria-hidden="true"></i>
                                 Financeiro
                             </a>
@@ -119,13 +119,10 @@ if (isset($_SESSION['DadosAluno'])) {
                         <?php echo"$linha[nome]"?>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="mudarPagina('./Pages/PaginaDocumentos/documentos.php', 6)">Documentos</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        <li><a class="dropdown-item" href="#">Sair da conta</a></li>
                     </ul>
                 </div>
             </nav>
