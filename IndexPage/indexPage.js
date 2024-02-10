@@ -6,7 +6,9 @@ function mudarPagina(pagina, index) {
         item.classList.remove("selecionado")
     })
 
-    abasLaterais[index].classList.add("selecionado")
+    if (index <= 6) {
+        abasLaterais[index].classList.add("selecionado")
+    } 
 
     indexPagina.src = pagina
 }

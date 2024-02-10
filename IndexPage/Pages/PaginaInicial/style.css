@@ -6,6 +6,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+main{
+    overflow-y: hidden;
+}
+
 .box {
     padding: .9em 3.5em;
 

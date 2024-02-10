@@ -3,7 +3,6 @@
 include_once('../../../php/conexao.php');
 $sql = "SELECT * FROM quadrodehorarios";
 
-
 ?>
 
 
@@ -50,8 +49,10 @@ $sql = "SELECT * FROM quadrodehorarios";
                         $sql = "SELECT * FROM quadrodehorarios";
                         $result = mysqli_query($conn, $sql);
 
-                        while ($linha = mysqli_fetch_array($result)) {
-                            echo "<option value='$linha[id]'>$linha[UC]</option>";
+                        if($linha) {
+                            while ($linha = mysqli_fetch_array($result)) {
+                                echo "<option value='$linha[id]'>$linha[UC]</option>";
+                            }
                         }
                         ?>
 
@@ -76,7 +77,8 @@ $sql = "SELECT * FROM quadrodehorarios";
                     $result = mysqli_query($conn, $sql);
                     $linha = mysqli_fetch_array($result);
                     
-                    echo"
+                    if($linha) {
+                        echo"
                     <tr>
                         <th class'col'>$linha[1]</th>
                         <th class'col'>$linha[2]</th>
@@ -85,6 +87,7 @@ $sql = "SELECT * FROM quadrodehorarios";
                         <th class'col'>$linha[5]</th>
                     </tr>
                     ";
+                    }
 
                     ?>
         </table>

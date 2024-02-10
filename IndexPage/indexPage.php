@@ -2,12 +2,11 @@
 
 include_once("../php/conexao.php");
 
-session_start();
-if (isset($_SESSION['DadosAluno'])) {
-    if ($_SESSION['DadosAluno'] != 'vazio') {
-        $linha = $_SESSION['DadosAluno'];
-    }
-}
+
+$sql = "SELECT * FROM dadosAluno WHERE id = 1";
+$result = mysqli_query($conn, $sql);
+$linha = mysqli_fetch_array($result);
+
 
 ?>
 
@@ -119,8 +118,8 @@ if (isset($_SESSION['DadosAluno'])) {
                         <?php echo"$linha[nome]"?>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#" onclick="mudarPagina('./Pages/PaginaDocumentos/documentos.php', 6)">Documentos</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="mudarPagina('./Pages/PaginaDocumentos/documentos.php')">Documentos</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="mudarPagina('./Pages/PaginaDadosPessoais/DadosPessoais.php')">Dados pessoais</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                         <li><a class="dropdown-item" href="#">Sair da conta</a></li>
                     </ul>
