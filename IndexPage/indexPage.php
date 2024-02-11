@@ -25,6 +25,11 @@ $linha = mysqli_fetch_array($result);
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -37,6 +42,18 @@ $linha = mysqli_fetch_array($result);
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
 </head>
@@ -52,7 +69,7 @@ $linha = mysqli_fetch_array($result);
                 <ul style="padding-left: 0;">
                     <li class="selecionado abaLateral">
                         <div class="box">
-                            <a href="#" onclick="mudarPagina('./Pages/PaginaInicial/index.html', 0)">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaInicial/index.php', 0)">
                                 <i class="fa fa-home" aria-hidden="true"></i>
                                 Página Inicial
                             </a>
@@ -111,23 +128,71 @@ $linha = mysqli_fetch_array($result);
                         </div>
                     </li>
                 </ul>
-                <div class="btn-group dropup contaINF">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                <div class="btn-group dropup contaINF" onclick="console.log('clicado') showModalP(true)">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <?php echo"$linha[nome]"?>
+                        <?php echo "$linha[nome]" ?>
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#" onclick="mudarPagina('./Pages/PaginaDocumentos/documentos.php')">Documentos</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="mudarPagina('./Pages/PaginaDadosPessoais/DadosPessoais.php')">Dados pessoais</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li><a class="dropdown-item" href="#">Sair da conta</a></li>
-                    </ul>
                 </div>
             </nav>
         </div>
     </header>
-    <iframe src="./Pages/PaginaInicial/index.html" frameborder="0" id="indexPagina"></iframe>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Perfil do Aluno</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modalCSS">
+                        <div class="headerModal">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <p>
+                                <?php echo "$linha[nome]" ?>
+                            </p>
+                        </div>
+                        <div class="buttonModal">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaDocumentos/documentos.php')" data-dismiss="modal">Documentos</a>
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaDadosPessoais/DadosPessoais.php')" data-dismiss="modal">Dados
+                                pessoais</a>
+                            <a href="#" data-dismiss="modal">Sair da Conta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modalCSS">
+                    <div class="headerModal">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <p>
+                            <?php echo "$linha[nome]" ?>
+                        </p>
+                    </div>
+                    <div class="buttonModal">
+                        <a href="#" onclick="mudarPagina('./Pages/PaginaDocumentos/documentos.php')">Documentos</a>
+                        <a href="#" onclick="mudarPagina('./Pages/PaginaDadosPessoais/DadosPessoais.php')">Dados
+                            pessoais</a>
+                        <a href="#">Sair da Conta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <iframe src="./Pages/PaginaInicial/index.php" frameborder="0" id="indexPagina"></iframe>
 
     <script src="indexPage.js"></script>
 </body>
