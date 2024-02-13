@@ -69,3 +69,9 @@ form > div > div >label {
 input:disabled {
     background-color: #58759270;
 }
+
+.btnSenha {
+    background-color: transparent;
+    color: white;
+    padding: 20em;
+}

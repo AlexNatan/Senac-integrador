@@ -8,6 +8,7 @@ $result = mysqli_query($conn, $sql);
 $linha = mysqli_fetch_array($result);
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -168,32 +169,7 @@ $linha = mysqli_fetch_array($result);
             </div>
         </div>
     </div>
-
-
-    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modalCSS">
-                    <div class="headerModal">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <p>
-                            <?php echo "$linha[nome]" ?>
-                        </p>
-                    </div>
-                    <div class="buttonModal">
-                        <a href="#" onclick="mudarPagina('./Pages/PaginaDocumentos/documentos.php')">Documentos</a>
-                        <a href="#" onclick="mudarPagina('./Pages/PaginaDadosPessoais/DadosPessoais.php')">Dados
-                            pessoais</a>
-                        <a href="#">Sair da Conta</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <iframe src="./Pages/PaginaInicial/index.php" frameborder="0" id="indexPagina"></iframe>
-
     <script src="indexPage.js"></script>
 </body>
 
