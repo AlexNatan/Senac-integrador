@@ -1,3 +1,12 @@
+<?php
+
+include_once('../../../php/conexao.php');
+$sql = "SELECT * FROM cursos";
+$result = mysqli_query($conn, $sql);
+$linha = mysqli_fetch_array($result);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -39,12 +48,22 @@
 
                 <div class="container text-center ">
                 <div class="btn-group w-50 ">
+                    <?php
+                    
+                    session_start();
+                    $idCurso = isset($_SESSION['cursoSelecionado']) ? $_SESSION['cursoSelecionado'] : '';
+                    $sqlCS = "SELECT * FROM cursos WHERE id = $idCurso";
+                    $resultCS = mysqli_query($conn, $sqlCS);
+                    $linhaCS = mysqli_fetch_array($resultCS);
+    
+                    
+                    ?>
                     <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static"
                         aria-expanded="false">
-                        Right-aligned but left aligned when large screen
+                        <?php echo "$linhaCS[nome]" ?>
                     </button>
                         
-                        <table class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start form-control text-colored">
+                        <table class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start  text-colored">
                         <tr>
                             <th>
                             <span class="ms-3 me-5">
