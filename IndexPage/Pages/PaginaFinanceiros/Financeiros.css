@@ -1,0 +1,10 @@
+.text-colored {
+    color: #004a8d;
+}
+
+
+
+.form-check-input:checked {
+    background-color: orange;
+    border-color: orange;
+}
