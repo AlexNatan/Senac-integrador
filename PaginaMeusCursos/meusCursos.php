@@ -33,7 +33,7 @@ $linha = mysqli_fetch_array($result);
         <div class="containercss">
             <div>
                 <img src="../image/1024px-Senac_logo.svg.png" alt="">
-                <h2>Portal - Aluno</h2>
+                <h2 class="text-colored">Portal - Aluno</h2>
 
             </div>
             <nav>
