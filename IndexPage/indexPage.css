@@ -110,6 +110,12 @@ img {
     color: #fff;
 }
 
+<<<<<<< HEAD
+.contaINF {
+    
+}
+=======
+>>>>>>> IcaroMain
 
 .contaINF button {
     display: flex;
@@ -154,6 +160,12 @@ img {
     background-color: #659ae4;
 }
 
+<<<<<<< HEAD
+iframe {
+    width: 100%;
+}
+
+=======
 .hr{
     height: 1px;
 }
@@ -235,3 +247,4 @@ iframe {
     font-weight: bolder;
     cursor: pointer;
 }
+>>>>>>> IcaroMain
