@@ -121,8 +121,8 @@ $linha = mysqli_fetch_array($result);
                     </li>
                     <li class="abaLateral">
                         <div class="box">
-                            <a href="#"
-                                onclick="mudarPagina('./Pages/PaginaBibliotecaDigital/BibliotecaDigital.html', 6)">
+                            <a href="https://bibliotecadigitalsenac.com.br/#/"
+                                onclick="mudarPagina('./Pages/PaginaBibliotecaDigital/BibliotecaDigital.html', 6)" target="_blank">
                                 <i class="fa fa-university" aria-hidden="true"></i>
                                 Biblioteca Digital
                             </a>
