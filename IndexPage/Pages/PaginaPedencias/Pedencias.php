@@ -12,6 +12,8 @@
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="Pedencias.css">
+
+    
 </head>
 <body>
     <section>
@@ -19,13 +21,16 @@
             <h1 class="mt-4 text-colored">Pendências</h1>
             <hr class="mb-5">
 
-            <div class="card">
-                <div class="btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      Right-aligned menu example
+            <div class="mt-4">
+
+                <div class="container text-center ">
+                <div class="btn-group w-50 ">
+                    <button type="button" class="btn dropdown-toggle btn-primary" data-bs-toggle="dropdown" data-bs-display="static"
+                        aria-expanded="false">
+                        Aluno
                     </button>
                     
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start form-control text-colored ">
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start form-control text-colored p-2">
                         <h4 class="ps-2">Arquivo aprovado</h4>
                       <li class="btn btn-shadow"><button class="dropdown-item" type="button"><span class="material-symbols-outlined ">
                         file_save

@@ -27,7 +27,7 @@
     <main>
         <section>
             <header>
-                <h1>Página Inicial</h1>
+                <h1 style="color: #004a8d;">Página Inicial</h1>
                 <div class="dropdown">
                 </div>
             </header>

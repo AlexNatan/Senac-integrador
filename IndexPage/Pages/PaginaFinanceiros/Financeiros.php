@@ -35,17 +35,17 @@
                 </div>
             </div>
 
-            <div class="card mt-4">
+            <div class="mt-4">
 
                 <div class="container text-center ">
                 <div class="btn-group w-50 ">
-                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static"
+                    <button type="button" class="btn dropdown-toggle btn-primary" data-bs-toggle="dropdown" data-bs-display="static"
                         aria-expanded="false">
-                        Right-aligned but left aligned when large screen
+                        Aluno
                     </button>
                         
-                        <table class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start form-control text-colored">
-                        <tr>
+                        <table class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start text-colored p-2">
+                        <tr >
                             <th>
                             <span class="ms-3 me-5">
                                     Sintuação

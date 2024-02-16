@@ -113,7 +113,7 @@ $linha = mysqli_fetch_array($result);
                     </li>
                     <li class="abaLateral">
                         <div class="box">
-                            <a href="#" onclick="mudarPagina('./Pages/PaginaPedencias/Pedencias.html', 5)">
+                            <a href="#" onclick="mudarPagina('./Pages/PaginaPedencias/Pedencias.php', 5)">
                                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
                                 Pedências
                             </a>
@@ -162,7 +162,7 @@ $linha = mysqli_fetch_array($result);
                             <a href="#" onclick="mudarPagina('./Pages/PaginaDocumentos/documentos.php')" data-dismiss="modal">Documentos</a>
                             <a href="#" onclick="mudarPagina('./Pages/PaginaDadosPessoais/DadosPessoais.php')" data-dismiss="modal">Dados
                                 pessoais</a>
-                            <a href="#" data-dismiss="modal">Sair da Conta</a>
+                            <a href="../index.php">Sair da Conta</a>
                         </div>
                     </div>
                 </div>

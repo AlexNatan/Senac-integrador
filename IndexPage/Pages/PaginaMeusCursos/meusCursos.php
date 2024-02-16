@@ -32,7 +32,7 @@ $linha = mysqli_fetch_array($result);
     <main>
         <section>
             <header>
-                <h1>Meus Cursos</h1>
+                <h1 class="text-colored"style="color: #004a8d;">Meus Cursos</h1>
                 <div class="dropdown">
                 </div>
             </header>

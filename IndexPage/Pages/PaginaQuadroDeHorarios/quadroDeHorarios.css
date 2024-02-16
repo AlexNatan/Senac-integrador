@@ -27,3 +27,7 @@ section > header {
     justify-content: space-between;
     align-items: center;
 }
+
+.text-colored {
+    color: #004a8d;
+}

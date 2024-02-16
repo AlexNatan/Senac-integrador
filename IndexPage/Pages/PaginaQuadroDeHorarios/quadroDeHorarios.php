@@ -33,7 +33,7 @@ $sql = "SELECT * FROM quadrodehorarios";
     <main>
         <section>
             <header>
-                <h1>Quadro De Horarios</h1>
+                <h1 class="" style="color: #004a8d;">Quadro De Horarios</h1>
                 <div class="dropdown">
                 </div>
             </header>
@@ -60,7 +60,7 @@ $sql = "SELECT * FROM quadrodehorarios";
 
                 </form>
         </section>
-        <table class="table" id="tableHorarios">
+        <table class="table ms-2 col-1 text-center" id="tableHorarios">
             <thead>
                 <tr>
                     <th scope="col">Horário</th>

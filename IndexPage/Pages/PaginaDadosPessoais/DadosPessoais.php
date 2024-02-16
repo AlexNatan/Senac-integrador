@@ -107,7 +107,7 @@ if (isset($_SESSION['alterou'])) {
                 <label for="">Senha:</label>
                 <input type="password" <?php echo "value=$linha[senha]" ?> disabled>
                 <button type="button" class="btnSenha" data-toggle="modal" data-target="#exampleModal"
-                    style="border-radius: 3px; margin-top: .3em; padding: .2em .6em;">
+                    style="border-radius: 3px; margin-top: .3em; padding: .2em .6em; color: black;">
                     Alterar Senha
                 </button>
             </div>
